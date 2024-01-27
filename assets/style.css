@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap');
+
+:root {
+    --White: hsl(0, 0%, 100%);
+    --Light-pink: hsl(275, 100%, 97%);
+    --Grayish-purple: hsl(292, 16%, 49%);
+    --Dark-purple: hsl(292, 42%, 14%);
+}
+
+* {
+    font-family: 'Work Sans', sans-serif;
+}
+
+h1, h3 {
+    color: var(--Dark-purple);
+}
+
+p {
+    color: var(--Light-pink);
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+html {
+    background-color: var(--Light-pink);
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('/assets/images/background-pattern-desktop.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+
+.container {
+    position: relative;
+    width: 600px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+}
+
+
+.c-box {
+    margin: auto;
+    width: 88%;
+    padding-bottom: 5px;;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    margin-bottom: -5vh;
+}
+
+.title {
+    margin-left: 2.5vw;
+}
+
+.question {
+    margin: 0;
+    padding: 0;
+}
+
+.toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 600;
+    padding: 10px;
+    border-bottom: 0.5px solid rgba(190, 190, 190, 0.13);
+}
+
+.toggle .icon {
+    margin-right: 10px;
+}
+
+.toggle .icon img {
+    width: 20px;
+    height: auto;
+    transition: src 0.3s ease-in-out;
+}
+
+.toggle::after {
+    content: url('/assets/images/icon-plus.svg');
+    margin-left: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+.toggle.show::after {
+    content: url('/assets/images/icon-minus.svg')
+}
+
+.answer {
+    font-size: 16px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+    color: var(--Grayish-purple);
+    font-weight: 400;
+}
+
+.toggle:hover {
+    color: rgb(168, 2, 168);
+}
+
+@media (max-width: 600px) {
+    body {
+        background-image: url('/assets/images/background-pattern-mobile.svg');
+    }
+    .container {
+        border-radius: 10px;
+    }
+    .header {
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    .staricon {
+        height: 20px;
+        vertical-align: middle;
+    }
+    .title {
+        margin-left: 5vw;
+        font-size: 34px;
+    }
+    .toggle:hover {
+        color: var(--Dark-purple);
+    }
+    .container {
+        width: 75%; /* Adjust the width as needed for smaller screens */
+        margin: 20px auto; /* Adjust the margin as needed */
+    }
+}
