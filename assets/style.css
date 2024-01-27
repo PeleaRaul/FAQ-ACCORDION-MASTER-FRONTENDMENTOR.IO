@@ -11,8 +11,12 @@
     font-family: 'Work Sans', sans-serif;
 }
 
-h1, h3 {
+h1, h2 {
     color: var(--Dark-purple);
+}
+
+h2 {
+    font-size: 16px;
 }
 
 p {
